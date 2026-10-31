@@ -1,7 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
-import { prisma } from "@/lib/db";
+import { getPrisma, prisma } from "@/lib/db";
 import { recordAnalyticsEvent } from "@/lib/analytics";
 import { mailConfigured, sendEnquiryNotification } from "@/lib/mail";
 import { hashIp, rateLimit } from "@/lib/rate-limit";
@@ -65,6 +65,14 @@ export async function submitEnquiry(
     parsed.data.type === "admissions"
       ? parsed.data.admissionLevel || (parsed.data.category.startsWith("S1") ? "S1" : parsed.data.category.startsWith("S5") ? "S5" : "general")
       : null;
+
+  if (!getPrisma()) {
+    return {
+      ok: false,
+      message:
+        "The online enquiry desk is not connected yet. Please contact the college office on +256 772 521 175 or 0393 001 062.",
+    };
+  }
 
   try {
     await prisma.enquiry.create({

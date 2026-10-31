@@ -3,7 +3,12 @@ export function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 export function siteUrl() {
-  return (process.env.SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+  const fromEnv = process.env.SITE_URL;
+  if (fromEnv) return fromEnv.replace(/\/$/, "");
+  const vercel =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+  if (vercel) return `https://${vercel.replace(/\/$/, "")}`;
+  return "http://localhost:3000";
 }
 
 export function slugify(value: string) {

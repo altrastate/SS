@@ -35,6 +35,11 @@ npm run db:setup     # create SQLite database and seed content
 npm test             # permission, timezone, analytics, token, and payment checks
 ```
 
+The public website can be deployed without `DATABASE_URL`. In that mode it
+serves the approved static college content already in the code. Enquiry
+storage, the admin CMS, and Phase 3 modules stay offline until a hosted
+database is connected.
+
 ## Configuration
 
 See `.env.example`. Do not commit real secrets.

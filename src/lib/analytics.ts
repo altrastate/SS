@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 
 const PUBLIC_PREFIXES = [
   "/",
@@ -34,12 +34,14 @@ export function isPublicAnalyticsPath(path: string) {
 export async function recordAnalyticsEvent(type: string, path: string, meta?: string | null) {
   if (!isPublicAnalyticsPath(path)) return;
   try {
-    const settings = await prisma.siteSettings.findUnique({
+    const db = getPrisma();
+    if (!db) return;
+    const settings = await db.siteSettings.findUnique({
       where: { id: "default" },
       select: { analyticsEnabled: true },
     });
     if (settings && settings.analyticsEnabled === false) return;
-    await prisma.analyticsEvent.create({
+    await db.analyticsEvent.create({
       data: {
         type,
         path: path.slice(0, 180),

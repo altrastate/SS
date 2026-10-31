@@ -3,7 +3,7 @@ import { EventCard } from "@/components/ui/cards";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { EmptyState } from "@/components/ui/states";
-import { prisma } from "@/lib/db";
+import { getPublishedEvents } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { kampalaDayStamp, kampalaYearMonth, SCHOOL_TIMEZONE } from "@/lib/timezone";
 import { isPublished } from "@/lib/utils";
@@ -37,14 +37,7 @@ export default async function EventsPage({
   const category = params.category?.trim() || "";
   const view = params.view === "calendar" ? "calendar" : "list";
 
-  const published = await prisma.eventItem.findMany({
-    where: {
-      status: "published",
-      archived: false,
-      audience: { not: "alumni" },
-    },
-    orderBy: [{ startAt: "asc" }, { createdAt: "desc" }],
-  });
+  const published = await getPublishedEvents();
   const live = published.filter((item) => isPublished(item.status, item.publishedAt));
   const categories = Array.from(new Set(live.map((item) => item.category))).sort();
   const filtered = live.filter((item) => {

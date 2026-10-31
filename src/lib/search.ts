@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { isPublished } from "@/lib/utils";
 
 export type SearchHit = {
@@ -104,53 +104,69 @@ export async function searchPublishedContent(query: string, page = 1, pageSize =
     status: "published",
     OR: [{ publishedAt: null }, { publishedAt: { lte: now } }],
   };
+  const db = getPrisma();
+  let news: Array<{ title: string; summary: string; slug: string; status: string; publishedAt: Date | null }> = [];
+  let events: Array<{ title: string; summary: string; slug: string; status: string; publishedAt: Date | null }> = [];
+  let downloads: Array<{ id: string; title: string; description: string | null }> = [];
+  let alumni: Array<{ title: string; summary: string; slug: string; status: string; publishedAt: Date | null }> = [];
+  let projects: Array<{ title: string; summary: string; slug: string | null; id: string }> = [];
 
-  const [news, events, downloads, alumni, projects] = await Promise.all([
-    prisma.newsArticle.findMany({
-      where: {
-        ...published,
-        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }],
-      },
-      select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
-      take: 40,
-    }),
-    prisma.eventItem.findMany({
-      where: {
-        ...published,
-        cancelled: false,
-        archived: false,
-        audience: { not: "alumni" },
-        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { location: { contains: q } }],
-      },
-      select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
-      take: 40,
-    }),
-    prisma.downloadItem.findMany({
-      where: {
-        status: "published",
-        OR: [{ expiresAt: null }, { expiresAt: { gt: now } }],
-        AND: [{ OR: [{ title: { contains: q } }, { description: { contains: q } }, { category: { contains: q } }] }],
-      },
-      select: { id: true, title: true, description: true },
-      take: 40,
-    }),
-    prisma.alumniStory.findMany({
-      where: {
-        ...published,
-        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { personName: { contains: q } }],
-      },
-      select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
-      take: 40,
-    }),
-    prisma.developmentProject.findMany({
-      where: {
-        status: "published",
-        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { publicUpdates: { contains: q } }],
-      },
-      select: { title: true, summary: true, slug: true, id: true },
-      take: 40,
-    }),
-  ]);
+  if (db) {
+    try {
+      [news, events, downloads, alumni, projects] = await Promise.all([
+        db.newsArticle.findMany({
+          where: {
+            ...published,
+            OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }],
+          },
+          select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
+          take: 40,
+        }),
+        db.eventItem.findMany({
+          where: {
+            ...published,
+            cancelled: false,
+            archived: false,
+            audience: { not: "alumni" },
+            OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { location: { contains: q } }],
+          },
+          select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
+          take: 40,
+        }),
+        db.downloadItem.findMany({
+          where: {
+            status: "published",
+            OR: [{ expiresAt: null }, { expiresAt: { gt: now } }],
+            AND: [{ OR: [{ title: { contains: q } }, { description: { contains: q } }, { category: { contains: q } }] }],
+          },
+          select: { id: true, title: true, description: true },
+          take: 40,
+        }),
+        db.alumniStory.findMany({
+          where: {
+            ...published,
+            OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { personName: { contains: q } }],
+          },
+          select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
+          take: 40,
+        }),
+        db.developmentProject.findMany({
+          where: {
+            status: "published",
+            OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { publicUpdates: { contains: q } }],
+          },
+          select: { title: true, summary: true, slug: true, id: true },
+          take: 40,
+        }),
+      ]);
+    } catch {
+      news = [];
+      events = [];
+      downloads = [];
+      alumni = [];
+      projects = [];
+    }
+  }
 
   const hits: SearchHit[] = [
     ...STATIC_PAGES.filter((pageItem) => matches(pageItem.title, q) || matches(pageItem.summary, q)),
