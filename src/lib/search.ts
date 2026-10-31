@@ -1,0 +1,205 @@
+import { prisma } from "@/lib/db";
+import { isPublished } from "@/lib/utils";
+
+export type SearchHit = {
+  type: "page" | "news" | "event" | "document" | "alumni" | "project";
+  title: string;
+  summary: string;
+  href: string;
+};
+
+const STATIC_PAGES: SearchHit[] = [
+  {
+    type: "page",
+    title: "Home",
+    summary: "Jinja College, a government-aided boys' boarding school on Rubaga Hill, Jinja City.",
+    href: "/",
+  },
+  {
+    type: "page",
+    title: "About the College",
+    summary: "History, leadership, vision, mission, and values of Jinja College.",
+    href: "/about",
+  },
+  {
+    type: "page",
+    title: "Academics",
+    summary: "O-Level and A-Level pathways at Jinja College.",
+    href: "/academics",
+  },
+  {
+    type: "page",
+    title: "Admissions",
+    summary: "How to enquire about Senior 1 and Senior 5 admission to Jinja College.",
+    href: "/admissions",
+  },
+  {
+    type: "page",
+    title: "Campus Life",
+    summary: "Boarding, pastoral life, and student community at Jinja College.",
+    href: "/campus-life",
+  },
+  {
+    type: "page",
+    title: "News",
+    summary: "Official news and announcements from Jinja College.",
+    href: "/news",
+  },
+  {
+    type: "page",
+    title: "Events",
+    summary: "Published school calendar and college events.",
+    href: "/events",
+  },
+  {
+    type: "page",
+    title: "Downloads",
+    summary: "Approved public documents from Jinja College.",
+    href: "/downloads",
+  },
+  {
+    type: "page",
+    title: "Alumni and development",
+    summary: "JICOBA, alumni stories, and school development projects.",
+    href: "/alumni",
+  },
+  {
+    type: "page",
+    title: "Contact",
+    summary: "How to contact Jinja College on Rubaga Hill, Jinja City.",
+    href: "/contact",
+  },
+  {
+    type: "page",
+    title: "Privacy notice",
+    summary: "How this website handles enquiry information and first-party analytics.",
+    href: "/privacy",
+  },
+  {
+    type: "page",
+    title: "Support the college",
+    summary: "Approved Jinja College development projects and donation information.",
+    href: "/support",
+  },
+  {
+    type: "page",
+    title: "School notices",
+    summary: "Published notices and optional email subscriptions for parents and guardians.",
+    href: "/parent-communications",
+  },
+];
+
+function matches(haystack: string, needle: string) {
+  return haystack.toLowerCase().includes(needle.toLowerCase());
+}
+
+export async function searchPublishedContent(query: string, page = 1, pageSize = 12) {
+  const q = query.trim();
+  if (!q || q.length > 80) {
+    return { items: [] as SearchHit[], total: 0, page: 1, pageCount: 1, pageSize };
+  }
+
+  const now = new Date();
+  const published = {
+    status: "published",
+    OR: [{ publishedAt: null }, { publishedAt: { lte: now } }],
+  };
+
+  const [news, events, downloads, alumni, projects] = await Promise.all([
+    prisma.newsArticle.findMany({
+      where: {
+        ...published,
+        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }],
+      },
+      select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
+      take: 40,
+    }),
+    prisma.eventItem.findMany({
+      where: {
+        ...published,
+        cancelled: false,
+        archived: false,
+        audience: { not: "alumni" },
+        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { location: { contains: q } }],
+      },
+      select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
+      take: 40,
+    }),
+    prisma.downloadItem.findMany({
+      where: {
+        status: "published",
+        OR: [{ expiresAt: null }, { expiresAt: { gt: now } }],
+        AND: [{ OR: [{ title: { contains: q } }, { description: { contains: q } }, { category: { contains: q } }] }],
+      },
+      select: { id: true, title: true, description: true },
+      take: 40,
+    }),
+    prisma.alumniStory.findMany({
+      where: {
+        ...published,
+        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { personName: { contains: q } }],
+      },
+      select: { title: true, summary: true, slug: true, status: true, publishedAt: true },
+      take: 40,
+    }),
+    prisma.developmentProject.findMany({
+      where: {
+        status: "published",
+        OR: [{ title: { contains: q } }, { summary: { contains: q } }, { body: { contains: q } }, { publicUpdates: { contains: q } }],
+      },
+      select: { title: true, summary: true, slug: true, id: true },
+      take: 40,
+    }),
+  ]);
+
+  const hits: SearchHit[] = [
+    ...STATIC_PAGES.filter((pageItem) => matches(pageItem.title, q) || matches(pageItem.summary, q)),
+    ...news
+      .filter((item) => isPublished(item.status, item.publishedAt))
+      .map((item) => ({
+        type: "news" as const,
+        title: item.title,
+        summary: item.summary,
+        href: `/news/${item.slug}`,
+      })),
+    ...events
+      .filter((item) => isPublished(item.status, item.publishedAt))
+      .map((item) => ({
+        type: "event" as const,
+        title: item.title,
+        summary: item.summary,
+        href: `/events/${item.slug}`,
+      })),
+    ...downloads.map((item) => ({
+      type: "document" as const,
+      title: item.title,
+      summary: item.description || "Approved public document",
+      href: `/downloads#${item.id}`,
+    })),
+    ...alumni
+      .filter((item) => isPublished(item.status, item.publishedAt))
+      .map((item) => ({
+        type: "alumni" as const,
+        title: item.title,
+        summary: item.summary,
+        href: `/alumni/${item.slug}`,
+      })),
+    ...projects.map((item) => ({
+      type: "project" as const,
+      title: item.title,
+      summary: item.summary,
+      href: item.slug ? `/support/projects/${item.slug}` : "/support",
+    })),
+  ];
+
+  const total = hits.length;
+  const pageCount = Math.max(1, Math.ceil(total / pageSize));
+  const safePage = Math.min(Math.max(1, page), pageCount);
+  return {
+    items: hits.slice((safePage - 1) * pageSize, safePage * pageSize),
+    total,
+    page: safePage,
+    pageCount,
+    pageSize,
+  };
+}
