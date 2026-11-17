@@ -10,7 +10,7 @@ import type {
 import { DEFAULT_SETTINGS } from "@/lib/defaults";
 import { GALLERY_IMAGES, HOME_TIMELINE } from "@/lib/site-media";
 
-const STAMP = new Date("1946-01-01T00:00:00.000Z");
+const STAMP = new Date("2024-07-28T00:00:00.000Z");
 
 export function staticSiteSettings(): SiteSettings {
   return {
@@ -25,17 +25,18 @@ export const STATIC_FAQS: FAQ[] = [
     category: "general",
     sortOrder: 1,
     status: "published",
-    question: "Where is Jinja College located?",
+    question: "Where is Kapchorwa Senior Secondary School?",
     answer:
-      "Jinja College is on Rubaga Hill, Jinja City, Uganda. Currently published school information also describes the college as standing along the Jinja–Kampala highway, about two kilometres north of Jinja City.",
+      "The school is in Kawowo Parish, Central Division, Kapchorwa Municipality, Kapchorwa District. Its postal address on the UNEB list is P.O. Box 114, Kapchorwa. OpenStreetMap places the campus at Kisenyi in Kapchorwa Town Council.",
   },
   {
     id: "faq-boarding",
     category: "general",
     sortOrder: 2,
     status: "published",
-    question: "Is Jinja College a boarding or day school?",
-    answer: "Jinja College is a full boarding secondary school for boys.",
+    question: "Is Kapchorwa Senior Secondary School a boarding or day school?",
+    answer:
+      "Published school directories list Kapchorwa Senior Secondary School as a government day school. It admits girls and boys. Confirm current day arrangements with the school office.",
   },
   {
     id: "faq-levels",
@@ -44,7 +45,7 @@ export const STATIC_FAQS: FAQ[] = [
     status: "published",
     question: "What levels of education does the school offer?",
     answer:
-      "The college offers O-Level (Senior 1 to Senior 4) and A-Level (Senior 5 to Senior 6) under the Uganda national curriculum.",
+      "The school offers O-Level (Senior 1 to Senior 4) and A-Level (Senior 5 to Senior 6) under the Uganda national curriculum.",
   },
   {
     id: "faq-admission",
@@ -53,16 +54,16 @@ export const STATIC_FAQS: FAQ[] = [
     status: "published",
     question: "What are the admission requirements?",
     answer:
-      "Currently published college guidance states that admissions are based on Primary Leaving Examination performance for O-Level and Uganda Certificate of Education results for A-Level, and that entrance interviews may also apply. Contact the school for the latest admission information.",
+      "In the Uganda system, O-Level admission is normally based on Primary Leaving Examination performance and A-Level admission on Uganda Certificate of Education results. Interviews and vacancies are confirmed by Kapchorwa Senior Secondary School. Contact the office for the latest information.",
   },
   {
     id: "faq-faith",
     category: "general",
     sortOrder: 5,
     status: "published",
-    question: "Does Jinja College have a religious affiliation?",
+    question: "Who can apply?",
     answer:
-      "Jinja College is a Catholic-founded school. It welcomes students of all faiths and promotes respect, discipline, and service.",
+      "Kapchorwa Senior Secondary School is a mixed government-aided day school. Girls and boys may apply. Families should confirm the current intake with the school office.",
   },
   {
     id: "faq-contact",
@@ -71,7 +72,7 @@ export const STATIC_FAQS: FAQ[] = [
     status: "published",
     question: "How do I contact the school about admission?",
     answer:
-      "Use the admissions enquiry form on this website, or contact the college office using the details on the contact page. Confirm current telephone numbers with the school before using them for urgent or financial matters.",
+      "Use the admissions enquiry form on this website, or call the numbers on the contact page. The office line published in school directories is +256 454 451 067. Confirm it with the school before using it for urgent or financial matters.",
   },
 ];
 
@@ -94,8 +95,8 @@ export const STATIC_PATHWAYS: AcademicPathway[] = [
     sortOrder: 1,
     status: "published",
     summary:
-      "Ordinary Level education at Jinja College follows the Uganda national curriculum for Senior 1 to Senior 4.",
-    body: "Jinja College offers O-Level as a boys' boarding pathway. Detailed subject lists, class arrangements, and current admission requirements will be published after confirmation by the school.\n\nCurrently published college guidance states that O-Level entry is based on Primary Leaving Examination performance, and that entrance interviews may also apply. Families should contact the school for the latest information.",
+      "Ordinary Level education at Kapchorwa Senior Secondary School follows the Uganda national curriculum for Senior 1 to Senior 4.",
+    body: "The school offers O-Level as a mixed day pathway. Subject lists and class arrangements should be confirmed with the office.\n\nO-Level entry in Uganda is normally based on Primary Leaving Examination performance. Families should contact the school for the latest admission information.",
   },
   {
     id: "pathway-a-level",
@@ -104,21 +105,20 @@ export const STATIC_PATHWAYS: AcademicPathway[] = [
     levelLabel: "Senior 5 to Senior 6",
     sortOrder: 2,
     status: "published",
-    summary:
-      "Advanced Level education is offered in Senior 5 and Senior 6. The college’s published history records that A-Level studies in arts and sciences began in 1981.",
-    body: "Jinja College offers A-Level education under the Uganda national curriculum. Current subject combinations are not listed here until the school supplies an approved list. Currently published college guidance states that A-Level admission is based on Uganda Certificate of Education results, and that entrance interviews may also apply.",
+    summary: "Advanced Level education is offered in Senior 5 and Senior 6.",
+    body: "Kapchorwa Senior Secondary School offers A-Level education under the Uganda national curriculum. Current subject combinations are confirmed by the school. A-Level admission is normally based on Uganda Certificate of Education results.",
   },
 ];
 
 export const STATIC_CAMPUS: CampusLifeSection[] = [
   {
-    id: "campus-boarding",
-    slug: "boarding",
-    title: "Boarding",
+    id: "campus-day",
+    slug: "the-school-day",
+    title: "The school day",
     sortOrder: 1,
     status: "published",
-    summary: "Jinja College is a full boarding secondary school for boys.",
-    body: "Residential life is central to the college. Jinja College is a government-aided boys' boarding school on Rubaga Hill. House arrangements, daily routines, and boarding contacts will be published after the school supplies approved details.",
+    summary: "Kapchorwa Senior Secondary School is listed as a government day school for girls and boys.",
+    body: "Students attend from Kawowo and the surrounding communities of Kapchorwa Municipality. Daily routines and reporting times are confirmed by the school office.",
   },
   {
     id: "campus-sports",
@@ -126,8 +126,8 @@ export const STATIC_CAMPUS: CampusLifeSection[] = [
     title: "Sports",
     sortOrder: 2,
     status: "published",
-    summary: "Currently published college information refers to rugby, football, and athletics among student activities.",
-    body: "Sport is part of co-curricular life at Jinja College. Fixtures, coaching staff, and team lists are not published here until the school authorises them.",
+    summary: "Athletics and ball games are part of student life in Kapchorwa.",
+    body: "Sport sits alongside classwork. Fixtures, coaching staff, and team lists are published when the school authorises them. In 2024 the school acquired a bus that can carry teams and students.",
   },
   {
     id: "campus-clubs",
@@ -135,17 +135,17 @@ export const STATIC_CAMPUS: CampusLifeSection[] = [
     title: "Clubs and societies",
     sortOrder: 3,
     status: "published",
-    summary: "Debate, music, drama, cultural clubs, and leadership activities are among those currently described by the college.",
+    summary: "Clubs, music, drama, and student leadership can be listed here when the school supplies a directory.",
     body: "Club lists, meeting times, and patrons will be added when an approved directory is supplied.",
   },
   {
-    id: "campus-faith",
-    slug: "spiritual-life",
-    title: "Spiritual life",
+    id: "campus-welfare",
+    slug: "student-welfare",
+    title: "Student welfare",
     sortOrder: 4,
     status: "published",
-    summary: "Jinja College is Catholic-founded and welcomes students of all faiths.",
-    body: "The college promotes values of respect, discipline, and service. Details of chapel life and pastoral programmes will be published after confirmation.",
+    summary: "Pastoral care and guidance sit with the school administration.",
+    body: "This website does not publish private student information. Welfare contacts and counselling arrangements will be added when the school confirms them.",
   },
 ];
 
@@ -159,17 +159,17 @@ export const STATIC_STAFF: StaffProfile[] = [
     category: "leadership",
     status: "published",
     sortOrder: 1,
-    bio: "Head Teacher of Jinja College. The portrait shown is the approved Head Teacher photograph supplied for this website.",
+    bio: "James Mnyokos was named as head teacher of Kapchorwa Senior Secondary School during the 2026 Uganda Certificate of Education briefings. A formal portrait has not been supplied for this website, so the school crest is shown.",
   },
 ];
 
 export const STATIC_GALLERY: GalleryItem[] = GALLERY_IMAGES.map((imageUrl, index) => ({
   id: `gallery-${index + 1}`,
-  title: "Jinja College",
+  title: "Kapchorwa",
   caption: null,
   imageUrl,
-  altText: "Jinja College campus photograph",
-  category: "Campus",
+  altText: "Photograph of Kapchorwa and school life",
+  category: "Kapchorwa",
   sortOrder: index + 1,
   status: "published",
   createdAt: STAMP,

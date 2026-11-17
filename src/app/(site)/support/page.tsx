@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Support the college",
-    description: "Approved Jinja College development projects. Online donations are only offered when a payment provider is configured and confirmed.",
+    description: "Approved Kapchorwa Senior Secondary School development projects. Online donations are only offered when a payment provider is configured and confirmed.",
     path: "/support",
   });
 }
@@ -25,7 +25,7 @@ export default async function SupportPage() {
     <>
       <PageHero
         eyebrow="Development"
-        title="Support Jinja College"
+        title="Support Kapchorwa Senior Secondary School"
         description={settings.supportIntro || "Support information is published only after the college approves project details and payment channels."}
         crumbs={[{ href: "/", label: "Home" }, { href: "/support", label: "Support" }]}
       />
@@ -61,7 +61,7 @@ export default async function SupportPage() {
                   </p>
                 ) : (
                   <p className="mt-3 text-muted">
-                    Online donations are not enabled. Jinja College has not approved a payment provider, account details, or fundraising figures for this website.
+                    Online donations are not enabled. Kapchorwa Senior Secondary School has not approved a payment provider, account details, or fundraising figures for this website.
                   </p>
                 )}
                 <Link href="/support/donate" className="mt-5 inline-flex min-h-11 items-center font-semibold text-navy underline">

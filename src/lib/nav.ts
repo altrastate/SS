@@ -13,7 +13,7 @@ export const mainNav = [
 ] as const;
 
 export const footerNav = [
-  { href: "/about", label: "About the College" },
+  { href: "/about", label: "About the school" },
   { href: "/academics", label: "Academics" },
   { href: "/admissions", label: "Admissions" },
   { href: "/campus-life", label: "Campus Life" },
@@ -21,7 +21,7 @@ export const footerNav = [
   { href: "/events", label: "Events" },
   { href: "/downloads", label: "Downloads" },
   { href: "/alumni", label: "Alumni & Development" },
-  { href: "/support", label: "Support the college" },
+  { href: "/support", label: "Support the school" },
   { href: "/parent-communications", label: "Notices" },
   { href: "/search", label: "Search" },
   { href: "/contact", label: "Contact" },

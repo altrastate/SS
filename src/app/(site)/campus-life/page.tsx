@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return pageMetadata({
     title: "Campus Life",
     description:
-      "Boarding, sport, clubs, worship, and student welfare at Jinja College, a boys' boarding school in Jinja City.",
+      "The school day, sport, clubs, and student welfare at Kapchorwa Senior Secondary School, a mixed day school in Kapchorwa Municipality.",
     path: "/campus-life",
   });
 }
@@ -38,10 +38,10 @@ export default async function CampusLifePage() {
 
       <section className="py-16">
         <div className="container-page mb-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <FeatureCard title="Sports" description="Rugby, football, athletics, volleyball, basketball, tennis, and chess." />
-          <FeatureCard title="Music, dance and drama" description="Cultural galas, choir, and the annual Soshi Night." />
-          <FeatureCard title="Leadership" description="Prefectship, clubs, and student councils. Current officers are not named here." />
-          <FeatureCard title="Debate and tours" description="Debating, study trips, and industry visits as described by the college." />
+          <FeatureCard title="Sports" description="Athletics, football, and other games. Fixtures are published when the school confirms them." />
+          <FeatureCard title="Clubs and culture" description="Music, drama, and clubs when the school publishes the current list." />
+          <FeatureCard title="Leadership" description="Prefects and class leaders. Current officers are not named here." />
+          <FeatureCard title="School transport" description="A 40-seater bus acquired in 2024 with parents, students, and the board of governors." />
         </div>
         <div className="container-page grid gap-8">
           {sections.length ? (
@@ -57,7 +57,7 @@ export default async function CampusLifePage() {
           ) : (
             <EmptyState
               title="Campus life sections awaiting approved content"
-              description="Boarding, sport, clubs, and welfare details can be published by authorised staff."
+              description="Boarding is not listed for this school. Day routines, sport, clubs, and welfare details can be published by authorised staff."
             />
           )}
         </div>
@@ -67,7 +67,7 @@ export default async function CampusLifePage() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Gallery"
-            title="College photographs"
+            title="Kapchorwa photographs"
             description="Only approved images are shown. Student names and private details are not published."
           />
           <div className="mt-10">
@@ -93,15 +93,15 @@ export default async function CampusLifePage() {
         <div className="container-page grid gap-6 md:grid-cols-3">
           <FeatureCard
             title="Health and safety"
-            description="The college’s published development plan records medical services among school operations. Current clinic details will be published after confirmation."
+            description="Clinic hours and emergency procedures will be published after the school confirms them. This website does not store student health records."
           />
           <FeatureCard
             title="Guidance and counselling"
-            description="Student guidance is part of the college’s stated educational work. Appointed staff names are not published until confirmed."
+            description="Student guidance sits with the school. Appointed staff names are not published until confirmed."
           />
           <FeatureCard
             title="Facilities"
-            description="Currently published college information refers to science laboratories, ICT facilities, a library, dormitories, sports grounds, and classrooms."
+            description="Public directories have referred to classrooms and a library. Current laboratory and boarding details are not stated here until the school confirms them."
           />
         </div>
       </section>

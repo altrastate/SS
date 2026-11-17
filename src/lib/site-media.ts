@@ -1,4 +1,4 @@
-export const SCHOOL_CREST = "/images/jinja_College_Badge.png";
+export const SCHOOL_CREST = "/images/kapchorwa-ss-badge.png";
 
 export const HOME_NAV = [
   { href: "/#about", label: "About" },
@@ -13,64 +13,65 @@ export const HOME_NAV = [
 export const HERO_SLIDES = [
   {
     src: "/images/hero-slide-1.jpg",
-    alt: "Jinja College students gathered on campus.",
-    eyebrow: "Strive to Excel",
+    alt: "A view of Kapchorwa.",
+    eyebrow: "Knowledge Is Our Future Light",
     titleBefore: "Welcome to ",
-    titleAccent: "Jinja College",
+    titleAccent: "Kapchorwa S.S.",
     titleAfter: "",
-    description: "Since 1946, an institution where quality education for life in a dynamic world guides all we do.",
-    primary: { href: "/#contact", label: "Apply for Admission" },
-    secondary: { href: "/#about", label: "Discover JICO" },
+    description:
+      "A government-aided mixed day secondary school in Kawowo, Kapchorwa Municipality, offering O-Level and A-Level.",
+    primary: { href: "/#contact", label: "Ask about admission" },
+    secondary: { href: "/#about", label: "About the school" },
   },
   {
     src: "/images/hero-slide-2.jpg",
-    alt: "Jinja College students in a campus gathering.",
-    eyebrow: "Grooming Uganda's future since 1946",
-    titleBefore: "Eight decades of ",
-    titleAccent: "excellence",
+    alt: "Highland views around Kapchorwa.",
+    eyebrow: "Kawowo, Kapchorwa",
+    titleBefore: "Learning in the ",
+    titleAccent: "highlands",
     titleAfter: "",
-    description: "A proud history of producing generations of men who shape Uganda and the world.",
-    primary: { href: "/#history", label: "Our History" },
-    secondary: { href: "/#life", label: "Community" },
+    description: "Girls and boys study together on a campus in Central Division, Kapchorwa Municipality.",
+    primary: { href: "/#history", label: "Our story" },
+    secondary: { href: "/#life", label: "Student life" },
   },
   {
     src: "/images/hero-slide-3.jpg",
-    alt: "A teacher with students in a Jinja College classroom.",
-    eyebrow: "Beyond the classroom",
-    titleBefore: "Knowledge, ",
-    titleAccent: "discipline",
-    titleAfter: " & character",
-    description: "We empower every boy to excel in the classroom and in life.",
-    primary: { href: "/#academics", label: "Explore Academics" },
-    secondary: { href: "/#contact", label: "Join JICO" },
+    alt: "Towei, in Kapchorwa.",
+    eyebrow: "O-Level and A-Level",
+    titleBefore: "Knowledge that ",
+    titleAccent: "leads",
+    titleAfter: "",
+    description: "Senior 1 to Senior 6 under the Uganda national curriculum, confirmed with the school office.",
+    primary: { href: "/#academics", label: "Explore academics" },
+    secondary: { href: "/#contact", label: "Contact the office" },
   },
   {
     src: "/images/hero-slide-4.jpg",
-    alt: "College life and values at Jinja College.",
-    eyebrow: "Faith & values",
+    alt: "Sipi valley in Kapchorwa District.",
+    eyebrow: "Sebei",
     titleBefore: "Rooted in ",
-    titleAccent: "godliness",
+    titleAccent: "Kapchorwa",
     titleAfter: "",
-    description: "A Catholic-founded school welcoming boys of all faiths — respect, service and integrity.",
-    primary: { href: "/#values", label: "Our Values" },
-    secondary: { href: "/#gallery", label: "See Campus" },
+    description: "A day school for the community, with sport, clubs, and a standard of discipline in every class.",
+    primary: { href: "/#values", label: "Our values" },
+    secondary: { href: "/#gallery", label: "See Kapchorwa" },
   },
 ] as const;
 
 export const PILLARS = [
   {
-    title: "Academic Excellence",
-    body: "Rigorous teaching in sciences, arts and languages with strong national exam results.",
+    title: "Academic work",
+    body: "O-Level and A-Level classes under the Uganda national curriculum, from Senior 1 to Senior 6.",
     image: "/images/pillar-academic.jpg",
   },
   {
-    title: "Discipline & Values",
-    body: "A structured boarding life that grows integrity, respect and responsibility.",
+    title: "Discipline",
+    body: "A structured school day that expects respect, punctuality, and responsibility from every learner.",
     image: "/images/pillar-discipline.jpg",
   },
   {
-    title: "Godliness",
-    body: "Catholic heritage rooted in faith and service, open to students of every belief.",
+    title: "Leadership",
+    body: "The motto on the crest — Knowledge Is Our Future Light — asks students to lead with what they learn.",
     image: "/images/hero-slide-4.jpg",
   },
 ] as const;
@@ -78,39 +79,39 @@ export const PILLARS = [
 export const LIFE_TILES = [
   {
     title: "Sports",
-    body: "Rugby, football, athletics, volleyball, basketball, tennis & chess",
+    body: "Athletics, football, and other games in a highland town known for sport",
     image: "/images/life-sports.jpg",
   },
   {
-    title: "Music, Dance & Drama",
-    body: "Cultural galas, choir and the annual Soshi Night",
+    title: "Clubs and culture",
+    body: "Music, drama, and clubs when the school publishes the current list",
     image: "/images/life-arts.jpg",
   },
   {
     title: "Leadership",
-    body: "Prefectship, clubs and student councils",
+    body: "Prefects, class leaders, and student responsibility",
     image: "/images/life-leadership.jpg",
   },
   {
-    title: "Debate & Tours",
-    body: "Debating, study trips and industry visits",
+    title: "School transport",
+    body: "A 40-seater school bus acquired in 2024 with parents and the board",
     image: "/images/life-tours.jpg",
   },
 ] as const;
 
 export const GALLERY_IMAGES = [
-  "/images/life-sports.jpg",
-  "/images/gallery-02.jpg",
-  "/images/gallery-03.jpg",
-  "/images/gallery-04.jpg",
   "/images/hero-slide-1.jpg",
-  "/images/gallery-06.jpg",
-  "/images/gallery-07.jpg",
   "/images/hero-slide-2.jpg",
-  "/images/gallery-09.jpg",
-  "/images/pillar-discipline.jpg",
-  "/images/life-arts.jpg",
+  "/images/hero-slide-3.jpg",
+  "/images/hero-slide-4.jpg",
+  "/images/about-students.jpg",
+  "/images/about-classroom.jpg",
   "/images/pillar-academic.jpg",
+  "/images/pillar-discipline.jpg",
+  "/images/life-sports.jpg",
+  "/images/life-arts.jpg",
+  "/images/life-leadership.jpg",
+  "/images/life-tours.jpg",
 ] as const;
 
 export const O_LEVEL_SUBJECTS = [
@@ -128,8 +129,6 @@ export const O_LEVEL_SUBJECTS = [
   "Literature",
   "Kiswahili",
   "Physical Education",
-  "Art & Design",
-  "French",
 ];
 
 export const A_LEVEL_SUBJECTS = [
@@ -144,81 +143,60 @@ export const A_LEVEL_SUBJECTS = [
   "Literature",
   "Agriculture",
   "Entrepreneurship",
-  "Fine Art",
   "General Paper",
   "Sub-ICT",
 ];
 
 export const HOME_TIMELINE = [
   {
-    year: "1946",
-    title: "The beginning",
+    year: "Kawowo",
+    title: "The campus",
     description:
-      "Founded by the Mill Hill Missionary Fathers, relocating from Budini College to premises vacated by the Franciscan Sisters. Fr. Mc Gough becomes first head teacher.",
+      "Kapchorwa Senior Secondary School is a government-aided day school in Kawowo Parish, Central Division, Kapchorwa Municipality. OpenStreetMap places the campus at Kisenyi in Kapchorwa Town Council.",
   },
   {
-    year: "1965",
-    title: "Secondary status",
-    description: "Becomes government-aided and is upgraded to S.1–S.4 under Fr. Jones.",
-  },
-  {
-    year: "1981",
-    title: "A' Level arrives",
-    description: "Upgraded to S.1–S.6 offering Arts and Sciences, led by Mr. Boniface Kategano.",
-  },
-  {
-    year: "1984–2024",
-    title: "Steady leadership",
-    description: "Led by Mr. Ogutti Bichachi, Mr. Iisat Ignatius, Mr. Kawuki Joseph and Mr. Isabirye Mathias.",
+    year: "Centre",
+    title: "A UNEB school",
+    description:
+      "The Uganda National Examinations Board lists the school as Kapchorwa Secondary School, P.O. Box 114, Kapchorwa. The published EMIS number is 3857.",
   },
   {
     year: "2024",
-    title: "A new chapter",
-    description: "Mr. Dhikusooka Michael takes the helm, renewing the call to Strive to Excel.",
+    title: "A school bus",
+    description:
+      "Head teacher Johnson Kitikoy Yesho announced a 40-seater bus, registration UBR006B, bought with contributions from parents, students, the board of governors, and well-wishers.",
+  },
+  {
+    year: "2026",
+    title: "UCE on campus",
+    description:
+      "During the 2026 Uganda Certificate of Education briefings, head teacher James Mnyokos said candidates would sit their papers without unnecessary interruptions.",
   },
 ] as const;
 
 export const OFFICIAL_NEWS = [
   {
-    href: "https://jinjacollege.sc.ug/jinosh-jinja-college-st-noas-school-zana-2k26/",
-    image: "/images/life-arts.jpg",
-    date: "April 20, 2026",
-    title: "JINOSH — Jinja College & St. Noa's School Zana @ 2K26",
-    summary: "Soshi Night: when St. Noa's grace met Jinja College's spirit.",
+    href: "https://ugandaradionetwork.net/story/uneb-urges-schools-to-submit-continuous-assessment-scores-as-uce-exams-kick-off-with-briefing-",
+    image: "/images/pillar-academic.jpg",
+    date: "October 9, 2026",
+    title: "Candidates briefed as UCE 2026 begins",
+    summary:
+      "Head teacher James Mnyokos said Kapchorwa Senior Secondary School candidates would not be interrupted unnecessarily during the papers.",
   },
   {
-    href: "https://jinjacollege.sc.ug/new-leadership-takes-the-helm-prefects-handover-and-swearing-in-ceremony/",
-    image: "/images/life-leadership.jpg",
-    date: "April 15, 2026",
-    title: "New Leadership Takes the Helm",
-    summary: "Prefects' handover and swearing-in ceremony.",
-  },
-  {
-    href: "https://jinjacollege.sc.ug/honouring-legacy-and-looking-to-the-future-a-memorable-st-josephs-day-celebration/",
-    image: "/images/gallery-06.jpg",
-    date: "April 7, 2026",
-    title: "A Memorable St. Joseph's Day",
-    summary: "Honouring legacy and looking to the future.",
-  },
-  {
-    href: "https://jinjacollege.sc.ug/innovation-and-partnership-a-resounding-success-at-our-termly-visitation-day/",
-    image: "/images/gallery-09.jpg",
-    date: "March 30, 2026",
-    title: "Termly Visitation Day",
-    summary: "Innovation and partnership — a resounding success.",
-  },
-  {
-    href: "https://jinjacollege.sc.ug/reflections-on-our-insightful-expedition-to-nytil-industries/",
+    href: "https://www.sebeination.com/new-school-bus-excites-students-and-teachers-at-kapchorwa-ss/",
     image: "/images/life-tours.jpg",
-    date: "March 23, 2026",
-    title: "Expedition to Nytil Industries",
-    summary: "Reflections on our educational tour to Nyanza Textiles.",
+    date: "July 28, 2024",
+    title: "Kapchorwa SS receives a new school bus",
+    summary:
+      "Parents, students, and the board helped the school acquire a 40-seater bus, registration UBR006B.",
   },
   {
-    href: "https://jinjacollege.sc.ug/bid-notice/",
-    image: "/images/news-bid.jpg",
-    date: "February 2, 2026",
-    title: "Bid Notice",
-    summary: "JICO invites suppliers to join our supplier base.",
+    href: "/admissions",
+    image: "/images/about-classroom.jpg",
+    date: "This term",
+    title: "Ask the office about admission",
+    summary:
+      "Senior 1 and Senior 5 places are confirmed by the school office. Call the published numbers or send an enquiry.",
   },
 ] as const;

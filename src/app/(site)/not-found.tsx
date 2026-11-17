@@ -10,7 +10,7 @@ export default function SiteNotFound() {
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <PrimaryButton href="/">Back to homepage</PrimaryButton>
-        <GhostButton href="/contact">Contact the college</GhostButton>
+        <GhostButton href="/contact">Contact the school</GhostButton>
       </div>
     </div>
   );

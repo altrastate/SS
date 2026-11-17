@@ -11,7 +11,7 @@ import { isPublished } from "@/lib/utils";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Events",
-    description: "Published Jinja College events and school calendar. Dates are shown in Africa/Kampala time.",
+    description: "Published Kapchorwa Senior Secondary School events and school calendar. Dates are shown in Africa/Kampala time.",
     path: "/events",
   });
 }

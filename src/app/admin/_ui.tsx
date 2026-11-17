@@ -28,7 +28,7 @@ export function AdminShell({
           <div className="flex items-center gap-3">
             <img src={SCHOOL_CREST} alt="" width={40} height={40} className="h-10 w-10 bg-transparent object-contain" />
             <div>
-              <p className="font-serif text-xl text-ivory">Jinja College</p>
+              <p className="font-serif text-xl text-ivory">Kapchorwa Senior Secondary School</p>
               <p className="text-xs uppercase tracking-[0.16em] text-gold-soft">Operations</p>
             </div>
           </div>

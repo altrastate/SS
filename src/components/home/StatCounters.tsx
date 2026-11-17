@@ -48,12 +48,20 @@ export function StatCounters({ foundingYear }: { foundingYear: number }) {
     return () => observer.disconnect();
   }, []);
 
-  const stats = [
-    { value: founded, label: "Year founded" },
-    { value: excellence, label: "Years of excellence" },
-    { value: classes, label: "Senior classes, S.1–S.6" },
-    { value: levels, label: "O' Level & A' Level" },
-  ];
+  const stats =
+    foundingYear >= 1900
+      ? [
+          { value: founded, label: "Year founded" },
+          { value: excellence, label: "Years of the school" },
+          { value: classes, label: "Senior classes, S.1–S.6" },
+          { value: levels, label: "O-Level and A-Level" },
+        ]
+      : [
+          { value: classes, label: "Senior classes, S.1–S.6" },
+          { value: levels, label: "O-Level and A-Level" },
+          { value: "Day", label: "Government-aided school" },
+          { value: "Mixed", label: "Girls and boys" },
+        ];
 
   return (
     <div ref={ref} className="stats-bar">

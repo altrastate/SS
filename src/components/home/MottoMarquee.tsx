@@ -1,11 +1,11 @@
 export function MottoMarquee() {
   const items = [
-    "Strive to Excel",
-    "Est. 1946",
-    "O' Level & A' Level",
-    "Boys' Boarding",
-    "Rubaga Hill, Jinja",
-    "Godliness · Discipline · Excellence",
+    "Knowledge Is Our Future Light",
+    "Kawowo, Kapchorwa",
+    "O-Level & A-Level",
+    "Girls and boys",
+    "Government-aided",
+    "Knowledge · Leadership · Community",
   ];
   const line = [...items, ...items];
   return (

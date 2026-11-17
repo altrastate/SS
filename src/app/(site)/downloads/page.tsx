@@ -9,7 +9,7 @@ import { formatSchoolDate } from "@/lib/timezone";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Downloads",
-    description: "Approved public documents from Jinja College.",
+    description: "Approved public documents from Kapchorwa Senior Secondary School.",
     path: "/downloads",
   });
 }

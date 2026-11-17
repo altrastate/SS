@@ -9,7 +9,7 @@ export async function generateMetadata() {
   return pageMetadata({
     title: "Contact",
     description:
-      "Contact Jinja College on Rubaga Hill, Jinja City. Send a general enquiry or confirm current office details with the school.",
+      "Contact Kapchorwa Senior Secondary School in Kawowo, Kapchorwa Municipality. Send a general enquiry or confirm current office details with the school.",
     path: "/contact",
   });
 }
@@ -22,7 +22,7 @@ export default async function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Reach the college"
+        eyebrow="Reach the school"
         title="Contact"
         description={settings.contactIntro || undefined}
         crumbs={[
@@ -35,7 +35,7 @@ export default async function ContactPage() {
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-8">
             <div>
-              <SectionHeading eyebrow="Location" title="Jinja College" />
+              <SectionHeading eyebrow="Location" title="Kapchorwa S.S." />
               <address className="mt-5 not-italic text-muted">
                 <p>{settings.locationLine}</p>
                 {settings.streetAddress ? <p className="mt-2">{settings.streetAddress}</p> : null}
@@ -72,7 +72,7 @@ export default async function ContactPage() {
                 <div className="mt-4">
                   <VerifyNotice>
                     These contact details are drawn from currently published school sources and should be
-                    confirmed with the college office before use for urgent or financial matters.
+                    confirmed with the school office before use for urgent or financial matters.
                   </VerifyNotice>
                 </div>
               ) : null}
@@ -80,11 +80,11 @@ export default async function ContactPage() {
             <div>
               <h2 className="font-serif text-2xl text-navy">Directions</h2>
               <p className="mt-3 text-muted">
-                Precise map coordinates have not been independently verified for this website. Use the
-                college name and Rubaga Hill, Jinja City, when asking for directions.
+                The campus is in Kawowo, Central Division, Kapchorwa Municipality. Ask for Kapchorwa
+                Senior Secondary School, or for Kapchorwa Secondary School, P.O. Box 114.
               </p>
               <a className="mt-4 inline-flex min-h-11 items-center font-semibold text-navy underline" href={mapUrl}>
-                Open a map search for Jinja College
+                Open a map search for Kapchorwa Senior Secondary School
               </a>
             </div>
             <div>
@@ -98,7 +98,7 @@ export default async function ContactPage() {
           <div className="border border-navy/10 bg-white p-6 sm:p-8">
             <SectionHeading
               eyebrow="Enquiry"
-              title="Write to the college"
+              title="Write to the school"
               description="Use this form for a general enquiry. Do not include private student records."
             />
             <div className="mt-6">

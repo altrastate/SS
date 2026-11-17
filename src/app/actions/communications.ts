@@ -62,7 +62,7 @@ export async function subscribeNotices(_prev: SubscribeState | undefined, formDa
   const mailed = await sendTransactionalEmail({
     to: email,
     kind: "subscriber_verify",
-    subject: "Confirm your Jinja College notices subscription",
+    subject: "Confirm your Kapchorwa Senior Secondary School notices subscription",
     text: `Confirm your subscription:\n${siteUrl()}/parent-communications/confirm?token=${token}\n\nUnsubscribe at any time: ${siteUrl()}/parent-communications/unsubscribe?email=${encodeURIComponent(email)}`,
   });
   if (!mailed.sent) {

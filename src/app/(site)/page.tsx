@@ -30,7 +30,6 @@ export default async function HomePage() {
     getTimeline(),
     getFaqs(),
   ]);
-  const years = Math.max(0, new Date().getFullYear() - settings.foundingYear);
   const mapQuery = encodeURIComponent(settings.mapQuery || settings.locationLine);
   const newsItems: NewsCard[] =
     news.length > 0
@@ -90,26 +89,26 @@ export default async function HomePage() {
 
       <section className="about section" id="about">
         <Reveal className="about-media">
-          <img src="/images/about-students.jpg" alt="Jinja College students" className="m1" />
-          <img src="/images/about-classroom.jpg" alt="Teacher in class" className="m2" />
+          <img src="/images/about-students.jpg" alt="Kapchorwa highlands" className="m1" />
+          <img src="/images/about-classroom.jpg" alt="The highland road through Kapchorwa" className="m2" />
           <div className="badge">
-            <b>{years}</b>
+            <b>KSS</b>
             <span>
-              years of
+              Kawowo
               <br />
-              legacy
+              Kapchorwa
             </span>
           </div>
         </Reveal>
         <Reveal className="about-text">
-          <p className="eyebrow dark">About JICO</p>
+          <p className="eyebrow dark">About the school</p>
           <SplitHeading>
-            Shaping confident, responsible <em>leaders</em> of tomorrow.
+            Knowledge that prepares <em>girls and boys</em> to lead.
           </SplitHeading>
           <p>
-            Jinja College is a government-aided, Catholic-founded boys&apos; boarding school on the scenic Rubaga
-            Hill, about two kilometres from Jinja city centre. We offer O&apos; Level (S.1–S.4) and A&apos; Level
-            (S.5–S.6) under the Uganda National Curriculum.
+            Kapchorwa Senior Secondary School is a government-aided mixed day school in Kawowo, Central
+            Division, Kapchorwa Municipality. We offer O&apos; Level (S.1–S.4) and A&apos; Level (S.5–S.6) under
+            the Uganda national curriculum.
           </p>
           <div className="vm">
             <div>
@@ -134,7 +133,7 @@ export default async function HomePage() {
         <Reveal className="ht-photo">
           <div className="frame">
             <img
-              src={settings.headTeacherPhotoUrl || "/images/head-teacher.webp"}
+              src={settings.headTeacherPhotoUrl || "/images/kapchorwa-ss-badge.png"}
               alt={
                 settings.headTeacherName
                   ? `${settings.headTeacherName}, ${settings.headTeacherTitle}`
@@ -144,22 +143,18 @@ export default async function HomePage() {
           </div>
           <div className="ht-name">
             <b>{settings.headTeacherName || settings.headTeacherTitle}</b>
-            <span>
-              {settings.headTeacherTitle}
-              {settings.headTeacherNamePending ? "" : ", 2024 – present"}
-            </span>
+            <span>{settings.headTeacherTitle}</span>
           </div>
         </Reveal>
         <Reveal className="ht-text">
-          <p className="eyebrow">Communication from the Head Teacher</p>
+          <p className="eyebrow">From the Head Teacher</p>
           <span className="quote-mark">“</span>
           <blockquote>{settings.headTeacherQuote}</blockquote>
           <p>
-            It should be clear to all our staff and students that we are not limiting ourselves to only academic
-            excellence. Our call is to strive for excellence in all human endeavours — in faith, in character, in
-            sport, in service and in leadership.
+            Classwork comes first, and it is not the only standard. Character, sport, service, and leadership
+            belong in the same school day for every girl and every boy.
           </p>
-          <p>I warmly welcome every parent, student and friend of Jinja College to join us on this journey.</p>
+          <p>Parents, students, and friends of Kapchorwa Senior Secondary School are welcome.</p>
           <div className="sig">{settings.headTeacherName?.replace(/^Mr\.\s/, "") || settings.headTeacherTitle}</div>
         </Reveal>
       </section>
@@ -217,10 +212,10 @@ export default async function HomePage() {
         </Reveal>
         <div className="facilities">
           {[
-            { icon: "⚗", title: "Science Labs", body: "Physics, chemistry & biology laboratories" },
-            { icon: "⌨", title: "ICT Lab", body: "Computer studies & digital skills" },
-            { icon: "❦", title: "Library", body: "Quiet study & research resources" },
-            { icon: "⌂", title: "Dormitories", body: "Safe, supervised boarding houses" },
+            { icon: "⚗", title: "Sciences", body: "Physics, chemistry, biology, and agriculture" },
+            { icon: "⌨", title: "ICT", body: "Computer studies for O-Level and A-Level" },
+            { icon: "❦", title: "Library", body: "A school library for quiet study" },
+            { icon: "🚌", title: "School bus", body: "A 40-seater bus acquired in 2024" },
           ].map((item) => (
             <Reveal key={item.title} className="f">
               <i>{item.icon}</i>
@@ -252,10 +247,15 @@ export default async function HomePage() {
         <Reveal className="head">
           <p className="eyebrow dark">School gallery</p>
           <SplitHeading>
-            Moments at <em>JICO</em>
+            Moments of <em>Kapchorwa</em>
           </SplitHeading>
         </Reveal>
         <MasonryGallery />
+        <p className="mt-6 text-center text-sm text-muted">
+          The photographs on this page are a view of Kapchorwa from Wikimedia Commons
+          (Kapchorwa.jpg, Creative Commons BY-SA 4.0). They show the district, not a claimed
+          campus shoot. The school can replace them with its own pictures.
+        </p>
       </section>
 
       <section className="section news" id="news">
@@ -292,18 +292,17 @@ export default async function HomePage() {
       <section className="motto-section" id="motto">
         <div className="motto-layout">
           <Reveal>
-            <p className="eyebrow">College motto</p>
+            <p className="eyebrow">School motto</p>
             <p className="motto-latin">{settings.motto}</p>
-            <p className="motto-english">The daily call of Jinja College</p>
+            <p className="motto-english">The words on the Kapchorwa S.S. crest</p>
           </Reveal>
           <Reveal className="motto-text-col" delay={100}>
             <p>
-              For a school whose motto is “{settings.motto}”, the college community is called to search for
-              excellence in study, character, faith, sport, service, and leadership.
+              For a school whose motto is “{settings.motto}”, learning is not kept for examinations alone. It is
+              the lead students are asked to take in character, work, and service.
             </p>
             <p>
-              This is not a slogan for ceremony only. It is the standard the college holds for every boy in its
-              care, from Senior 1 through Senior 6.
+              The standard is the same for every learner, girl or boy, from Senior 1 through Senior 6.
             </p>
           </Reveal>
         </div>
@@ -312,9 +311,9 @@ export default async function HomePage() {
       <section className="contact" id="contact">
         <div className="contact-inner">
           <Reveal>
-            <p className="eyebrow">Admissions open</p>
+            <p className="eyebrow">Admissions</p>
             <SplitHeading>
-              Give your son a future built on <em>excellence</em>.
+              Give your child a start built on <em>knowledge</em>.
             </SplitHeading>
             <ul className="info">
               <li>
@@ -339,10 +338,8 @@ export default async function HomePage() {
                 </li>
               ) : (
                 <li>
-                  <b>Website</b>
-                  <a href="https://jinjacollege.sc.ug" target="_blank" rel="noopener noreferrer">
-                    jinjacollege.sc.ug
-                  </a>
+                  <b>Postal address</b>
+                  {settings.postalAddress || "P.O. Box 114, Kapchorwa"}
                 </li>
               )}
               <li>
@@ -357,7 +354,7 @@ export default async function HomePage() {
         </div>
         <iframe
           className="map"
-          title="Map of Jinja College"
+          title="Map of Kapchorwa Senior Secondary School"
           loading="lazy"
           src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
         />

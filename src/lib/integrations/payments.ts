@@ -17,7 +17,7 @@ export function paymentsStatus(): IntegrationStatus {
     live: false,
     message: configured
       ? `Adapter '${provider}' is configured. Online donations stay pending until a verified webhook confirms payment. No provider is treated as live without school approval.`
-      : "Online donations are disabled. Set PAYMENTS_PROVIDER and PAYMENTS_WEBHOOK_SECRET only after Jinja College approves a payment provider.",
+      : "Online donations are disabled. Set PAYMENTS_PROVIDER and PAYMENTS_WEBHOOK_SECRET only after Kapchorwa Senior Secondary School approves a payment provider.",
     lastCheckedAt: new Date(),
   };
 }

@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 export async function generateMetadata() {
   return pageMetadata({
     title: "News & Events",
-    description: "Official news, announcements, and events from Jinja College.",
+    description: "Official news, announcements, and events from Kapchorwa Senior Secondary School.",
     path: "/news",
   });
 }
@@ -34,7 +34,7 @@ export default async function NewsPage({
   return (
     <>
       <PageHero
-        eyebrow="College notices"
+        eyebrow="School notices"
         title="News and events"
         description="Only content approved for public release is listed here."
         crumbs={[

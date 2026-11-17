@@ -10,9 +10,9 @@ import { parseValues } from "@/lib/utils";
 
 export async function generateMetadata() {
   return pageMetadata({
-    title: "About the College",
+    title: "About the school",
     description:
-      "History, values, leadership, and institutional profile of Jinja College, a boys' boarding secondary school in Jinja City, Uganda.",
+      "Place, values, and leadership of Kapchorwa Senior Secondary School, a mixed day secondary school in Kapchorwa Municipality, Uganda.",
     path: "/about",
   });
 }
@@ -34,7 +34,7 @@ function ProfileCard({
     <article className="border border-navy/10 bg-white p-6">
       {photoUrl ? (
         <div className="relative mb-5 aspect-[4/5] overflow-hidden bg-ivory-dark">
-          <Image src={photoUrl} alt={name ? `${name}, ${title}` : title} fill className="object-cover" sizes="320px" />
+          <Image src={photoUrl} alt={name ? `${name}, ${title}` : title} fill className="object-contain bg-navy" sizes="320px" />
         </div>
       ) : (
         <div className="mb-5 flex aspect-[4/5] items-end bg-ivory-dark p-4 text-sm text-muted">
@@ -65,7 +65,7 @@ export default async function AboutPage() {
     <>
       <PageHero
         eyebrow="Institutional profile"
-        title="About Jinja College"
+        title="About Kapchorwa S.S."
         description={settings.aboutOverview || undefined}
         crumbs={[
           { href: "/", label: "Home" },
@@ -76,13 +76,13 @@ export default async function AboutPage() {
       <section className="py-16">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <div>
-            <SectionHeading eyebrow="Overview" title="A college of heritage and purpose" />
+            <SectionHeading eyebrow="Overview" title="A school for Kapchorwa" />
             <div className="prose-jico mt-6 text-muted">
               <p>{settings.aboutOverview}</p>
               <p>
-                Jinja College stands on Rubaga Hill, about two kilometres north of Jinja City, in Rubaga
-                Parish, Mpumudde–Nalufenya–Kimaka Division. It is a Catholic-founded and government-aided
-                boys’ boarding school offering both ordinary and advanced secondary education.
+                The campus is in Kawowo Parish, Central Division, Kapchorwa Municipality. It is a
+                government-aided day school for girls and boys, offering ordinary and advanced secondary
+                education. The postal address published by UNEB is P.O. Box 114, Kapchorwa.
               </p>
             </div>
           </div>
@@ -90,7 +90,11 @@ export default async function AboutPage() {
             <dl className="space-y-4">
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-ink">Founded</dt>
-                <dd className="mt-1 text-navy">{settings.foundingYear}</dd>
+                <dd className="mt-1 text-navy">
+                  {settings.foundingYear >= 1900
+                    ? settings.foundingYear
+                    : "Year not yet confirmed for this website"}
+                </dd>
               </div>
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-ink">Motto</dt>
@@ -112,12 +116,11 @@ export default async function AboutPage() {
       <section className="bg-white py-16">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <div>
-            <SectionHeading eyebrow="History" title="From Budini to Rubaga Hill" />
+            <SectionHeading eyebrow="History" title="On the public record" />
             <p className="mt-6 text-muted">{settings.historyText}</p>
             <p className="mt-4 text-muted">
-              The college later became a government-aided secondary school and, in subsequent years,
-              expanded to include advanced-level studies. Historical wording below follows the college’s
-              own published development plan and remains open to school verification.
+              Older directory figures for enrolment and facilities are not repeated here as current facts.
+              The school can replace this account when it confirms a fuller history.
             </p>
           </div>
           {timeline.length ? (
@@ -136,7 +139,7 @@ export default async function AboutPage() {
           <SectionHeading
             eyebrow="Purpose"
             title="Vision, mission, and values"
-            description="The statements below are taken from the college’s Strategic Development Plan 2021–2025. They remain editable pending confirmation that they are still the approved public wording."
+            description="These statements follow the school motto, Knowledge Is Our Future Light. The school can replace them with an approved development-plan wording at any time."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <article className="border border-navy/10 bg-white p-6">
@@ -167,7 +170,7 @@ export default async function AboutPage() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Leadership"
-            title="College leadership"
+            title="School leadership"
             description="Approved portraits and biographies can be published from the content manager. Historical office-holders are not presented as the current leadership unless confirmed."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -228,7 +231,7 @@ export default async function AboutPage() {
           <div>
             <SectionHeading
               eyebrow="Community"
-              title="Old boys and the continuing college"
+              title="Former students and the school"
               light
               description={settings.alumniIntro || undefined}
             />

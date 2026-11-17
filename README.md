@@ -1,6 +1,6 @@
-# Jinja College website
+# Kapchorwa Senior Secondary School website
 
-Official public website and operational content platform for Jinja College (JICO), Rubaga Hill, Jinja City, Uganda. Built by Altrastate Technologies Ltd.
+Official public website for Kapchorwa Senior Secondary School (Kapchorwa S.S.) in Kawowo, Central Division, Kapchorwa Municipality, Uganda. Built by Altrastate Technologies Ltd.
 
 Phase 3 community services are independently configurable. Alumni accounts, online donations, and notice subscriptions stay off until an authorised administrator enables them in site settings and, where needed, provider credentials exist.
 

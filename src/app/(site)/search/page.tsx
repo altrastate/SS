@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Search",
-    description: "Search published Jinja College pages, news, events, documents, and alumni content.",
+    description: "Search published Kapchorwa Senior Secondary School pages, news, events, documents, and alumni content.",
     path: "/search",
   });
 }

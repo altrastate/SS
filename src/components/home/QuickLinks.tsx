@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const LINKS = [
-  { href: "/about", label: "About the college", hint: "History, leadership, and values" },
+  { href: "/about", label: "About the school", hint: "Place, leadership, and values" },
   { href: "/academics", label: "Academics", hint: "O-Level and A-Level pathways" },
-  { href: "/admissions", label: "Admissions", hint: "Enquire about joining JICO" },
-  { href: "/campus-life", label: "Campus life", hint: "Boarding, sport, and community" },
-  { href: "/news", label: "News", hint: "Notices from the college" },
-  { href: "/contact", label: "Contact", hint: "Rubaga Hill, Jinja City" },
+  { href: "/admissions", label: "Admissions", hint: "Enquire about Senior 1 and Senior 5" },
+  { href: "/campus-life", label: "Campus life", hint: "The school day, sport, and clubs" },
+  { href: "/news", label: "News", hint: "Notices from the school" },
+  { href: "/contact", label: "Contact", hint: "Kawowo, Kapchorwa Municipality" },
 ];
 
 export function QuickLinks() {

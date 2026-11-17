@@ -10,7 +10,7 @@ export default function SiteError({
     <div className="container-page py-20 text-center">
       <h1 className="font-serif text-4xl text-navy">This page could not be loaded</h1>
       <p className="mx-auto mt-4 max-w-xl text-muted">
-        Please try again. If the problem continues, contact the college office.
+        Please try again. If the problem continues, contact the school office.
       </p>
       <button
         type="button"

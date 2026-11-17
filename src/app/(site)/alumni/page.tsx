@@ -13,7 +13,7 @@ export async function generateMetadata() {
   return pageMetadata({
     title: "Alumni & Development",
     description:
-      "The Jinja College old boys' community, JICOBA, and school development. Support information is published only after school confirmation.",
+      "Former students of Kapchorwa Senior Secondary School, and school development. Support information is published only after school confirmation.",
     path: "/alumni",
   });
 }
@@ -30,7 +30,7 @@ export default async function AlumniPage() {
   return (
     <>
       <PageHero
-        eyebrow="Old boys"
+        eyebrow="Former students"
         title="Alumni and development"
         description={settings.alumniIntro || undefined}
         crumbs={[
@@ -42,7 +42,7 @@ export default async function AlumniPage() {
       <section className="py-16">
         <div className="container-page grid gap-6 lg:grid-cols-2">
           <article className="border border-navy/10 bg-white p-8">
-            <SectionHeading eyebrow="JICOBA" title="Jinja College Old Boys' Association" />
+            <SectionHeading eyebrow="Alumni" title="Former students of Kapchorwa S.S." />
             <p className="mt-5 text-muted">{settings.jicobaIntro}</p>
             {flags.alumniPortal ? (
               <p className="mt-6">
@@ -51,14 +51,14 @@ export default async function AlumniPage() {
                 </Link>
               </p>
             ) : (
-              <p className="mt-6 text-sm text-muted">A private alumni portal can be enabled by the college when account policies are approved.</p>
+              <p className="mt-6 text-sm text-muted">A private alumni portal can be enabled by the school when account policies are approved.</p>
             )}
           </article>
           <article className="border border-navy/10 bg-white p-8">
             <SectionHeading eyebrow="Reunions" title="Community gatherings" />
             <p className="mt-5 text-muted">
               Reunion dates, venues, and registration details will be published after they are confirmed
-              by the association or the college. No unofficial event is listed here.
+              by the association or the school. No unofficial event is listed here.
             </p>
           </article>
         </div>
@@ -97,7 +97,7 @@ export default async function AlumniPage() {
       <section className="py-16">
         <div className="container-page">
           <SectionHeading
-            eyebrow="The college ahead"
+            eyebrow="The school ahead"
             title="School development"
             description={settings.developmentIntro || undefined}
           />
@@ -148,10 +148,10 @@ export default async function AlumniPage() {
             />
             <div className="mt-6 flex flex-wrap gap-3">
               <SecondaryButton href="/support" tone="light">
-                Support the college
+                Support the school
               </SecondaryButton>
               <SecondaryButton href="/contact" tone="light">
-                Contact the college
+                Contact the school
               </SecondaryButton>
             </div>
           </div>

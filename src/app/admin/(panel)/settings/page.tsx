@@ -95,7 +95,7 @@ export default async function SettingsPage({
           <Field label="Fraud-prevention notice" name="fraudNotice" textarea defaultValue={settings.fraudNotice} />
           <Field label="Contact introduction" name="contactIntro" textarea defaultValue={settings.contactIntro} />
           <Field label="Alumni introduction" name="alumniIntro" textarea defaultValue={settings.alumniIntro} />
-          <Field label="JICOBA introduction" name="jicobaIntro" textarea defaultValue={settings.jicobaIntro} />
+          <Field label="Alumni association introduction" name="jicobaIntro" textarea defaultValue={settings.jicobaIntro} />
           <Field label="Development introduction" name="developmentIntro" textarea defaultValue={settings.developmentIntro} />
         </section>
         <section className="border border-navy/10 bg-white p-5 lg:col-span-2">

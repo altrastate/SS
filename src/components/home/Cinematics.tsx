@@ -35,9 +35,9 @@ export function Cinematics() {
     <>
       <div className="scroll-prog" id="jico-scroll-prog" aria-hidden="true" />
       {loader ? (
-        <div className="jico-loader" role="status" aria-label="Loading Jinja College">
+        <div className="jico-loader" role="status" aria-label="Loading Kapchorwa Senior Secondary School">
           <img src={SCHOOL_CREST} alt="" width={90} height={90} className="bg-transparent" />
-          <span>Strive to Excel</span>
+          <span>Knowledge Is Our Future Light</span>
         </div>
       ) : null}
     </>

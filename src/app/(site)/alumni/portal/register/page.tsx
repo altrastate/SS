@@ -6,7 +6,7 @@ import { getModuleFlags } from "@/lib/integrations/registry";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
-  return pageMetadata({ title: "Alumni registration", description: "Register a private Jinja College alumni account.", path: "/alumni/portal/register", noIndex: true });
+  return pageMetadata({ title: "Alumni registration", description: "Register a private Kapchorwa Senior Secondary School alumni account.", path: "/alumni/portal/register", noIndex: true });
 }
 
 export default async function AlumniRegisterPage() {

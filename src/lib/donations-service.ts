@@ -34,7 +34,7 @@ export async function applyVerifiedPayment(input: {
       to: updated.donorEmail,
       kind: "donation_receipt",
       resourceId: updated.id,
-      subject: `Jinja College donation receipt ${updated.receiptToken.slice(0, 10)}`,
+      subject: `Kapchorwa Senior Secondary School donation receipt ${updated.receiptToken.slice(0, 10)}`,
       text: [
         "This receipt is issued only after the payment provider confirmed the donation.",
         `Amount: ${updated.amount} ${updated.currency}`,

@@ -31,7 +31,7 @@ export function MasonryGallery() {
           <Reveal key={src}>
             <figure>
               <button type="button" onClick={() => setActive(index)} className="block w-full border-0 bg-transparent p-0">
-                <img src={src} alt={`Jinja College gallery photo ${index + 1}`} loading="lazy" />
+                <img src={src} alt={`Kapchorwa photograph ${index + 1}`} loading="lazy" />
               </button>
             </figure>
           </Reveal>
@@ -61,7 +61,7 @@ export function MasonryGallery() {
         {active !== null ? (
           <img
             src={GALLERY_IMAGES[active]}
-            alt={`Jinja College gallery photo ${active + 1}`}
+            alt={`Kapchorwa photograph ${active + 1}`}
             onClick={(event) => event.stopPropagation()}
           />
         ) : null}

@@ -11,7 +11,7 @@ import Link from "next/link";
 export async function generateMetadata() {
   return pageMetadata({
     title: "School notices",
-    description: "Published Jinja College notices. Email subscriptions require explicit confirmation.",
+    description: "Published Kapchorwa Senior Secondary School notices. Email subscriptions require explicit confirmation.",
     path: "/parent-communications",
   });
 }

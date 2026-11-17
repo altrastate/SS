@@ -6,7 +6,7 @@ import Link from "next/link";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Confirm subscription",
-    description: "Confirm a Jinja College notices subscription.",
+    description: "Confirm a Kapchorwa Senior Secondary School notices subscription.",
     path: "/parent-communications/confirm",
     noIndex: true,
   });

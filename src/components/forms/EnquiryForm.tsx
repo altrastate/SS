@@ -150,7 +150,7 @@ export function EnquiryForm({ type, categories }: Props) {
       <div className="flex items-start gap-3">
         <input id={`${type}-consent`} name="consent" type="checkbox" className="mt-1 h-4 w-4" required />
         <label htmlFor={`${type}-consent`} className="text-sm text-muted">
-          I understand that this form is for a general enquiry and that Jinja College may use the
+          I understand that this form is for a general enquiry and that Kapchorwa Senior Secondary School may use the
           details I provide to respond. I will not include private student records or sensitive
           personal information.
         </label>

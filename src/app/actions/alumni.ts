@@ -66,7 +66,7 @@ export async function registerAlumni(_prev: FormState | undefined, formData: For
     const mailed = await sendTransactionalEmail({
       to: email,
       kind: "alumni_verify",
-      subject: "Verify your Jinja College alumni account",
+      subject: "Verify your Kapchorwa Senior Secondary School alumni account",
       text: `Please confirm your alumni portal email by opening this link:\n${link}\n\nIf you did not request an account, you can ignore this message.`,
     });
     if (!mailed.sent) {
@@ -135,7 +135,7 @@ export async function requestAlumniReset(_prev: FormState | undefined, formData:
     await sendTransactionalEmail({
       to: email,
       kind: "alumni_reset",
-      subject: "Reset your Jinja College alumni password",
+      subject: "Reset your Kapchorwa Senior Secondary School alumni password",
       text: `Reset your password using this link (valid for one hour):\n${siteUrl()}/alumni/portal/reset?token=${token}\n`,
     });
   }

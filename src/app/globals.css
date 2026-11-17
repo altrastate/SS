@@ -3,21 +3,21 @@
 @source "../**/*.{ts,tsx}";
 
 @theme {
-  --color-navy: #0f3d2e;
-  --color-navy-deep: #08241b;
-  --color-navy-soft: #145a40;
-  --color-gold: #e8b931;
-  --color-gold-ink: #8a6d18;
-  --color-gold-soft: #f6d777;
-  --color-ivory: #f8f4ea;
-  --color-ivory-dark: #efe8d6;
-  --color-charcoal: #14201b;
-  --color-muted: #5f6b65;
-  --color-line: rgba(15, 61, 46, 0.12);
+  --color-navy: #1c1412;
+  --color-navy-deep: #0e0a09;
+  --color-navy-soft: #3a2420;
+  --color-gold: #c4491d;
+  --color-gold-ink: #8d3416;
+  --color-gold-soft: #e7a48a;
+  --color-ivory: #f7f3ef;
+  --color-ivory-dark: #efe6df;
+  --color-charcoal: #1c1412;
+  --color-muted: #6b5e58;
+  --color-line: rgba(28, 20, 18, 0.12);
   --color-danger: #8a2a2a;
   --color-ok: #1f5c3a;
-  --color-background: #fffdf8;
-  --color-foreground: #14201b;
+  --color-background: #fffdfb;
+  --color-foreground: #1c1412;
   --font-serif: var(--font-heading), Raleway, sans-serif;
   --font-sans: var(--font-body), "Fira Sans", sans-serif;
 }

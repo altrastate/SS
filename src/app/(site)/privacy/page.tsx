@@ -7,7 +7,7 @@ export async function generateMetadata() {
   return pageMetadata({
     title: "Privacy Notice",
     description:
-      "How Jinja College handles information submitted through this website, including enquiry forms.",
+      "How Kapchorwa Senior Secondary School handles information submitted through this website, including enquiry forms.",
     path: "/privacy",
   });
 }
@@ -20,7 +20,7 @@ export default async function PrivacyPage() {
       <PageHero
         eyebrow="Your information"
         title="Privacy notice"
-        description="This notice explains how the Jinja College website handles information submitted through public forms. It is a practical template and is not a claim of legal certification."
+        description="This notice explains how the Kapchorwa Senior Secondary School website handles information submitted through public forms. It is a practical template and is not a claim of legal certification."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/privacy", label: "Privacy" },

@@ -21,11 +21,11 @@ const sans = Fira_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
-    default: "Jinja College | Strive to Excel",
-    template: "%s | Jinja College",
+    default: "Kapchorwa Senior Secondary School | Knowledge Is Our Future Light",
+    template: "%s | Kapchorwa Senior Secondary School",
   },
   description:
-    "Jinja College is a government-aided boys' boarding secondary school on Rubaga Hill, Jinja City, Uganda.",
+    "Kapchorwa Senior Secondary School is a government-aided mixed day secondary school in Kawowo, Kapchorwa Municipality, Uganda.",
 };
 
 export default function RootLayout({

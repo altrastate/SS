@@ -67,7 +67,7 @@ export function HeroCarousel() {
       id="home"
       ref={heroRef}
       aria-roledescription="carousel"
-      aria-label="College highlights"
+      aria-label="School highlights"
       onTouchStart={(event) => {
         startX.current = event.touches[0].clientX;
       }}
@@ -91,7 +91,7 @@ export function HeroCarousel() {
                 <em>{item.titleAccent}</em>
                 {item.titleAfter}
               </SplitHeading>
-              <p className="hero-kicker">O&apos; Level &amp; A&apos; Level · Boys&apos; boarding</p>
+              <p className="hero-kicker">O&apos; Level &amp; A&apos; Level · Girls and boys</p>
               <p className="hero-motto-line">{item.description}</p>
               <div className="row">
                 <Link href={item.primary.href} className="btn btn-gold">

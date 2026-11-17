@@ -48,7 +48,7 @@ export function SiteHeader({ schoolName }: { schoolName: string; motto?: string 
           <img src={SCHOOL_CREST} alt={`${schoolName} crest`} width={46} height={46} />
           <span>
             <b>{schoolName}</b>
-            <small>Est. 1946</small>
+            <small>Kawowo, Kapchorwa</small>
           </span>
         </Link>
         <nav className={`jico-links${open ? " open" : ""}`} aria-label="Primary">

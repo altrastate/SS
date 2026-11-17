@@ -11,7 +11,7 @@ import { formatSchoolDateTime } from "@/lib/timezone";
 import { redirect } from "next/navigation";
 
 export async function generateMetadata() {
-  return pageMetadata({ title: "Alumni portal", description: "Private Jinja College alumni account.", path: "/alumni/portal", noIndex: true });
+  return pageMetadata({ title: "Alumni portal", description: "Private Kapchorwa Senior Secondary School alumni account.", path: "/alumni/portal", noIndex: true });
 }
 
 export default async function AlumniPortalPage({

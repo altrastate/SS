@@ -26,7 +26,7 @@ export async function createDonation(_prev: DonateState | undefined, formData: F
   if (!flags.donationsPage || !paymentsConfigured()) {
     return {
       ok: false,
-      message: "Online donations are not enabled. Jinja College has not approved a payment provider for this website.",
+      message: "Online donations are not enabled. Kapchorwa Senior Secondary School has not approved a payment provider for this website.",
     };
   }
   const requestHeaders = await headers();
@@ -77,7 +77,7 @@ export async function createDonation(_prev: DonateState | undefined, formData: F
     currency: "UGX",
     donorName: parsed.data.name,
     donorEmail: parsed.data.email,
-    description: "Jinja College development support",
+    description: "Kapchorwa Senior Secondary School development support",
     returnUrl: `${siteUrl()}/support/donate/return?ref=${encodeURIComponent(reference)}`,
   });
 

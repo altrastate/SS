@@ -11,7 +11,7 @@ export async function generateMetadata() {
   return pageMetadata({
     title: "Admissions",
     description:
-      "Admission information for Jinja College. Contact the school for the latest requirements, vacancies, and fee structure.",
+      "Admission information for Kapchorwa Senior Secondary School. Contact the school for the latest requirements, vacancies, and fee structure.",
     path: "/admissions",
   });
 }
@@ -24,7 +24,7 @@ export default async function AdmissionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Join the college"
+        eyebrow="Join the school"
         title="Admissions"
         description={settings.admissionsIntro || undefined}
         crumbs={[
@@ -93,7 +93,7 @@ export default async function AdmissionsPage() {
           <div>
             <SectionHeading
               eyebrow="Enquiry"
-              title="Ask the college about admission"
+              title="Ask the school about admission"
               description="This form sends a general enquiry. It is not an application portal and does not reserve a place."
             />
             <p className="mt-4 text-sm text-muted">

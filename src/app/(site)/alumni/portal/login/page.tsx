@@ -6,7 +6,7 @@ import { getModuleFlags } from "@/lib/integrations/registry";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
-  return pageMetadata({ title: "Alumni sign in", description: "Sign in to the Jinja College alumni portal.", path: "/alumni/portal/login", noIndex: true });
+  return pageMetadata({ title: "Alumni sign in", description: "Sign in to the Kapchorwa Senior Secondary School alumni portal.", path: "/alumni/portal/login", noIndex: true });
 }
 
 export default async function AlumniLoginPage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {

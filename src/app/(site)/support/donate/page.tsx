@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Donate",
-    description: "Support Jinja College through an approved payment provider when one is configured.",
+    description: "Support Kapchorwa Senior Secondary School through an approved payment provider when one is configured.",
     path: "/support/donate",
   });
 }
@@ -33,7 +33,7 @@ export default async function DonatePage() {
             <DonateForm projects={open} />
           ) : (
             <VerifyNotice>
-              Online donations are not enabled. Jinja College has not approved a payment provider for this website. Do not send money through unofficial channels.
+              Online donations are not enabled. Kapchorwa Senior Secondary School has not approved a payment provider for this website. Do not send money through unofficial channels.
             </VerifyNotice>
           )}
         </div>

@@ -63,12 +63,12 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md border border-navy/10 bg-white p-8">
         <Image
           src={SCHOOL_CREST}
-          alt="Jinja College crest"
+          alt="Kapchorwa Senior Secondary School crest"
           width={72}
           height={72}
           className="mb-4 h-16 w-16 bg-transparent object-contain"
         />
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-ink">Jinja College</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-ink">Kapchorwa Senior Secondary School</p>
         <h1 className="mt-2 font-serif text-3xl text-navy">Staff sign in</h1>
         <p className="mt-3 text-sm text-muted">
           This area is for authorised school staff. Unpublished content is not visible on the public

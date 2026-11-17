@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return pageMetadata({
     title: "Academics",
     description:
-      "O-Level and A-Level academic pathways at Jinja College, with departmental information published after school confirmation.",
+      "O-Level and A-Level academic pathways at Kapchorwa Senior Secondary School, with departmental information published after school confirmation.",
     path: "/academics",
   });
 }
@@ -103,7 +103,7 @@ export default async function AcademicsPage() {
           />
           <FeatureCard
             title="Teaching and learning"
-            description="Jinja College describes itself as a place of academic seriousness, discipline, and holistic education. Specific teaching programmes remain editable pending approved school content."
+            description="Kapchorwa Senior Secondary School describes itself as a place of academic seriousness, discipline, and holistic education. Specific teaching programmes remain editable pending approved school content."
           />
           <FeatureCard
             title="Assessment"

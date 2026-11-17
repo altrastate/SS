@@ -25,13 +25,11 @@ export function SiteFooter({ settings }: { settings: Settings }) {
         <img src={SCHOOL_CREST} alt="" width={46} height={46} />
         <span>
           <b>{settings.schoolName}</b>
-          <small>
-            {settings.motto} · Est. 1946
-          </small>
+          <small>{settings.motto}</small>
         </span>
       </div>
       <p>
-        © {year} {settings.schoolName} (JICO). All rights reserved.
+        © {year} {settings.schoolName}. All rights reserved.
         {settings.developerAttributionEnabled ? (
           <>
             {" "}

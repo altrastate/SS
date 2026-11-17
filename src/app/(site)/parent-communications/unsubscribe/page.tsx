@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export async function generateMetadata() {
   return pageMetadata({
     title: "Unsubscribe",
-    description: "Stop receiving Jinja College notice emails.",
+    description: "Stop receiving Kapchorwa Senior Secondary School notice emails.",
     path: "/parent-communications/unsubscribe",
     noIndex: true,
   });

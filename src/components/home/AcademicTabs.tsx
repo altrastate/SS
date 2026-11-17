@@ -17,8 +17,8 @@ export function AcademicTabs() {
       </div>
       <div className={`tab${tab === "o" ? " on" : ""}`}>
         <p>
-          A broad foundation under the new competence-based lower secondary curriculum, preparing boys for the
-          Uganda Certificate of Education (UCE).
+          A broad foundation under the competence-based lower secondary curriculum, preparing girls and boys
+          for the Uganda Certificate of Education (UCE). Confirm the current subject list with the school.
         </p>
         <div className="chips">
           {O_LEVEL_SUBJECTS.map((subject) => (
@@ -28,8 +28,8 @@ export function AcademicTabs() {
       </div>
       <div className={`tab${tab === "a" ? " on" : ""}`}>
         <p>
-          Specialised Arts and Science combinations leading to the Uganda Advanced Certificate of Education (UACE)
-          and university.
+          Specialised Arts and Science combinations leading to the Uganda Advanced Certificate of Education
+          (UACE). Combinations are confirmed by the school office.
         </p>
         <div className="chips">
           {A_LEVEL_SUBJECTS.map((subject) => (
